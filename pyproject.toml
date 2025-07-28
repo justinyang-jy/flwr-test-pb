@@ -25,12 +25,10 @@ serverapp = "fl_test_1.server_app:app"
 clientapp = "fl_test_1.client_app:app"
 
 [tool.flwr.app.config]
-num-server-rounds = 15
+num-server-rounds = 10
 fraction-fit = 0.3
-local-epochs-min = 1
-local-epochs-max = 5
-alpha = 0.05
-scaffold-lr = 1.0
+local-epochs = 2
+alpha = 0.1
 
 [tool.flwr.federations]
 default = "researchgrid"
@@ -38,4 +36,4 @@ default = "researchgrid"
 [tool.flwr.federations.researchgrid]
 address = "researchgrid.flower.ai"
 enable-user-auth = true
-options.num-supernodes = 50
+options.num-supernodes = 30
